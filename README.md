@@ -13,31 +13,9 @@ Built for **high-impact systems** where performance, scalability, and reliabilit
 - **True LRU eviction** → least recently used items are automatically removed.  
 - **Production-r**
 
+### Try it out
 ```go
-package main
-
-import (
-    "fmt"
-    "github.com/<your-username>/hyperlru"
-)
-
-func main() {
-    // Create a new cache with a capacity of 1 million keys
-    cache := hyperlru.NewCache(1_000_000)
-
-    // Put values
-    cache.Put("foo", "bar")
-    cache.Put("number", 42)
-
-    // Get values
-    if val, ok := cache.Get("foo"); ok {
-        fmt.Println("Found:", val) // Output: Found: bar
-    }
-
-    if _, ok := cache.Get("missing"); !ok {
-        fmt.Println("Key not found")
-    }
-}
+go run main.go
 
 ```
 
